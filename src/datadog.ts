@@ -15,7 +15,6 @@ export interface Event {
   alert_type: string
   tags: string[]
   host: string
-  source_type_name: string
 }
 
 export interface ServiceCheck {
