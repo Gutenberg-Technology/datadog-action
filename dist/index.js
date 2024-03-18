@@ -222,7 +222,6 @@ const yaml = __importStar(__nccwpck_require__(1917));
 const dd = __importStar(__nccwpck_require__(1401));
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
-        // try {
         const apiKey = core.getInput('api-key', { required: true });
         const apiURL = core.getInput('api-url') || 'https://api.datadoghq.com';
         const metrics = yaml.safeLoad(core.getInput('metrics')) || [];
@@ -234,9 +233,6 @@ function run() {
         const logApiURL = core.getInput('log-api-url') || 'https://http-intake.logs.datadoghq.com';
         const logs = yaml.safeLoad(core.getInput('logs')) || [];
         yield dd.sendLogs(logApiURL, apiKey, logs);
-        // } catch (error) {
-        //   core.setFailed(`Run failed: ${error.message}`)
-        // }
     });
 }
 exports.run = run;
